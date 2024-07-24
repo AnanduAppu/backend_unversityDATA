@@ -5,6 +5,7 @@ const asyncHandler = require('express-async-handler')
 
 const AddData = asyncHandler(async(req,res)=>{
 
+
     const {name,university,Date:DOB,rating,Subjects} = req.body;
 
 

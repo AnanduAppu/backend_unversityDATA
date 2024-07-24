@@ -1,18 +1,20 @@
-const express = require("express")
-const cors = require('cors')
+const express = require("express");
+const cors = require("cors");
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
+
+const origins = [
+    "https://university-data-ui-86k3.vercel.app",
+    "http://localhost:5173"
+];
 
 app.use(cors({
-    origin: "https://university-data-ui-86k3.vercel.app",
+    origin: origins,
     credentials: true,
 }));
 
 const routeUser = require("./route/router");
-app.use("/user",routeUser)
-
-
-
+app.use("/user", routeUser);
 
 module.exports = app;
